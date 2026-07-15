@@ -614,7 +614,7 @@ Puntos de vacunación:
 
 </ul>
 
-</div>0
+</div>
 
 </div>
 
@@ -1231,57 +1231,22 @@ Prevención y control de enfermedades zoonóticas
 <script>
 
 
-// Animación contador de vacunados
+// Datos iniciales de campaña VANCAN 2026
 
 let vacunados = 0;
 
 let meta = 6180;
 
-
-let contador = document.getElementById("contadorVacunados");
-
-let tarjeta = document.getElementById("vacunados");
-
-
-let intervalo = setInterval(function(){
-
-
-if(vacunados < meta){
-
-vacunados += 50;
-
-
-if(vacunados > meta){
-
-vacunados = meta;
-
-}
-
-
-contador.innerHTML = vacunados.toLocaleString();
-
-tarjeta.innerHTML = vacunados.toLocaleString();
-
-
-
 let porcentaje = Math.round((vacunados/meta)*100);
 
+
+document.getElementById("vacunados").innerHTML = vacunados.toLocaleString();
+
+document.getElementById("contadorVacunados").innerHTML = vacunados.toLocaleString();
 
 document.getElementById("barraAvance").style.width = porcentaje+"%";
 
 document.getElementById("barraAvance").innerHTML = porcentaje+"%";
-
-
-}else{
-
-
-clearInterval(intervalo);
-
-
-}
-
-
-},30);
 
 
 
