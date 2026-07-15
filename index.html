@@ -4,31 +4,54 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VANCAN Lampa 2026</title>
+<title>Portal VANCAN 2026 - Red de Salud Lampa</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 
 body{
-background:#f5f5f5;
-font-family:Arial;
+background:#f4f7fb;
+font-family:'Segoe UI',Arial,sans-serif;
+}
+
+.navbar{
+background:#005baa;
 }
 
 .hero{
 
-background:linear-gradient(90deg,#005baa,#009688);
+background:linear-gradient(rgba(0,72,124,.75),rgba(0,150,136,.75)),
+url("https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+padding:120px 20px;
 
 color:white;
 
-padding:70px 20px;
-
 text-align:center;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+font-weight:bold;
+
+}
+
+.hero p{
+
+font-size:1.2rem;
 
 }
 
@@ -38,7 +61,7 @@ border:none;
 
 border-radius:15px;
 
-box-shadow:0px 5px 15px rgba(0,0,0,.15);
+box-shadow:0 5px 18px rgba(0,0,0,.12);
 
 transition:.3s;
 
@@ -50,15 +73,71 @@ transform:translateY(-8px);
 
 }
 
+.icono{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+}
+
+.section-title{
+
+font-weight:bold;
+
+color:#005baa;
+
+margin-bottom:25px;
+
+}
+
 footer{
 
 background:#003366;
 
 color:white;
 
+padding:40px;
+
+margin-top:50px;
+
+}
+
+.table thead{
+
+background:#005baa;
+
+color:white;
+
+}
+
+.alert-institucional{
+
+background:#eaf5ff;
+
+border-left:6px solid #005baa;
+
 padding:20px;
 
-margin-top:40px;
+border-radius:10px;
+
+}
+
+.btn-vancan{
+
+background:#ff9800;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.btn-vancan:hover{
+
+background:#ef6c00;
+
+color:white;
 
 }
 
@@ -68,13 +147,15 @@ margin-top:40px;
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark">
 
 <div class="container">
 
-<a class="navbar-brand" href="#">
+<a class="navbar-brand fw-bold" href="#">
 
-🐶 VANCAN LAMPA
+<i class="fas fa-shield-dog"></i>
+
+VANCAN LAMPA 2026
 
 </a>
 
@@ -96,31 +177,41 @@ data-bs-target="#menu">
 
 <li class="nav-item">
 
-<a class="nav-link" href="#">Inicio</a>
+<a class="nav-link" href="#inicio">
+
+Inicio
+
+</a>
 
 </li>
 
 <li class="nav-item">
 
-<a class="nav-link" href="#">Cronograma</a>
+<a class="nav-link" href="#establecimientos">
+
+Establecimientos
+
+</a>
 
 </li>
 
 <li class="nav-item">
 
-<a class="nav-link" href="#">Mapa</a>
+<a class="nav-link" href="#faq">
+
+Preguntas
+
+</a>
 
 </li>
 
 <li class="nav-item">
 
-<a class="nav-link" href="#">Galería</a>
+<a class="nav-link" href="#contacto">
 
-</li>
+Contacto
 
-<li class="nav-item">
-
-<a class="nav-link" href="#">Contacto</a>
+</a>
 
 </li>
 
@@ -132,7 +223,7 @@ data-bs-target="#menu">
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="inicio">
 
 <div class="container">
 
@@ -142,7 +233,7 @@ Campaña Nacional de Vacunación Antirrábica Canina
 
 </h1>
 
-<h2>
+<h2 class="mb-3">
 
 VANCAN 2026
 
@@ -152,13 +243,17 @@ VANCAN 2026
 
 Protege a tu familia.
 
-Vacuna a tu perro.
+Vacuna gratuitamente a tu perro contra la rabia.
 
 </p>
 
-<a class="btn btn-warning btn-lg">
+<a href="#establecimientos"
 
-Ver Cronograma
+class="btn btn-lg btn-vancan">
+
+<i class="fas fa-map-marker-alt"></i>
+
+Ver establecimientos participantes
 
 </a>
 
@@ -168,59 +263,134 @@ Ver Cronograma
 
 <div class="container mt-5">
 
-<div class="row">
+<div class="alert alert-institucional">
 
-<div class="col-md-3">
+<h3>
+
+<i class="fas fa-bullhorn"></i>
+
+Comunicado Institucional
+
+</h3>
+
+<p align="justify">
+
+La Red de Salud Lampa, a través de la Unidad de Salud Ambiental y Zoonosis,
+desarrollará la Campaña Nacional de Vacunación Antirrábica Canina (VANCAN 2026),
+con la participación de los establecimientos de salud de la provincia de Lampa.
+La vacunación es gratuita y está dirigida a todos los perros mayores de tres
+meses de edad, con la finalidad de prevenir la rabia y proteger la salud de la
+población.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="container mt-5">
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
 
 <div class="card p-4 text-center">
 
-<h2>🐶</h2>
+<div class="icono text-primary">
 
-<h3 id="vacunados">0</h3>
+<i class="fas fa-dog"></i>
 
-Perros vacunados
+</div>
+
+<h2 id="vacunados">
+
+0
+
+</h2>
+
+<p>
+
+Canes vacunados
+
+</p>
 
 </div>
 
 </div>
 
-<div class="col-md-3">
+<div class="col-lg-3 col-md-6">
 
 <div class="card p-4 text-center">
 
-<h2>📍</h2>
+<div class="icono text-success">
 
-<h3>10</h3>
+<i class="fas fa-hospital"></i>
 
-Distritos
+</div>
+
+<h2>
+
+17
+
+</h2>
+
+<p>
+
+Establecimientos participantes
+
+</p>
 
 </div>
 
 </div>
 
-<div class="col-md-3">
+<div class="col-lg-3 col-md-6">
 
 <div class="card p-4 text-center">
 
-<h2>💉</h2>
+<div class="icono text-danger">
 
-<h3>0%</h3>
+<i class="fas fa-bullseye"></i>
 
-Cobertura
+</div>
+
+<h2>
+
+6 180
+
+</h2>
+
+<p>
+
+Meta provincial
+
+</p>
 
 </div>
 
 </div>
 
-<div class="col-md-3">
+<div class="col-lg-3 col-md-6">
 
 <div class="card p-4 text-center">
 
-<h2>👨‍⚕️</h2>
+<div class="icono text-warning">
 
-<h3>12</h3>
+<i class="fas fa-chart-line"></i>
 
-Brigadas
+</div>
+
+<h2>
+
+0%
+
+</h2>
+
+<p>
+
+Cobertura alcanzada
+
+</p>
 
 </div>
 
@@ -230,23 +400,37 @@ Brigadas
 
 </div>
 
-<section class="container mt-5">
+<div class="container mt-5" id="establecimientos">
 
-<h2>Cronograma de Vacunación</h2>
+<h2 class="section-title">
 
-<table class="table table-striped">
+<i class="fas fa-hospital"></i>
+
+Establecimientos de Salud participantes
+
+</h2>
+
+<p>
+
+A continuación se presenta la relación de establecimientos de salud que participarán
+en la Campaña Nacional de Vacunación Antirrábica Canina VANCAN 2026 y la meta
+asignada para cada uno.
+
+</p>
+
+<table class="table table-bordered table-hover align-middle">
 
 <thead>
 
 <tr>
 
-<th>Fecha</th>
+<th width="5%">N°</th>
 
-<th>Distrito</th>
+<th width="45%">Establecimiento de Salud</th>
 
-<th>Lugar</th>
+<th width="15%">Meta</th>
 
-<th>Horario</th>
+<th width="35%">Organización de la Vacunación</th>
 
 </tr>
 
@@ -255,84 +439,803 @@ Brigadas
 <tbody>
 
 <tr>
-
-<td>15 Ago</td>
-
-<td>Lampa</td>
-
-<td>Plaza de Armas</td>
-
-<td>08:00 - 14:00</td>
-
+<td>1</td>
+<td><strong>Hospital Antonio Barrionuevo - Lampa</strong></td>
+<td>1500</td>
+<td><span class="badge bg-primary">9 puntos de vacunación</span></td>
 </tr>
 
 <tr>
+<td>2</td>
+<td>Puesto de Salud Chañocahua</td>
+<td>400</td>
+<td>Vacunación organizada en coordinación con autoridades y comunidad.</td>
+</tr>
 
-<td>16 Ago</td>
+<tr>
+<td>3</td>
+<td>Puesto de Salud Huayta Central</td>
+<td>210</td>
+<td>Vacunación organizada según la realidad de su jurisdicción.</td>
+</tr>
 
-<td>Santa Lucia</td>
+<tr>
+<td>4</td>
+<td>Puesto de Salud Huayta Túpac</td>
+<td>400</td>
+<td>Coordinación con autoridades comunales.</td>
+</tr>
 
-<td>Municipalidad</td>
+<tr>
+<td>5</td>
+<td>Puesto de Salud Quelloquello</td>
+<td>300</td>
+<td>Vacunación en coordinación con la comunidad.</td>
+</tr>
 
-<td>08:00 - 14:00</td>
+<tr>
+<td>6</td>
+<td>Centro de Salud Cabanilla</td>
+<td>820</td>
+<td>Organización local según planificación del establecimiento.</td>
+</tr>
 
+<tr>
+<td>7</td>
+<td>Puesto de Salud Néstor Cáceres</td>
+<td>450</td>
+<td>Coordinación con localidades de su ámbito.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Puesto de Salud Quinsa Chata</td>
+<td>180</td>
+<td>Vacunación según programación local.</td>
+</tr>
+
+<tr>
+<td><strong>9</strong></td>
+<td><strong>Centro de Salud Santa Lucía</strong></td>
+<td><strong>840</strong></td>
+<td><span class="badge bg-success">6 puntos de vacunación</span></td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Puesto de Salud Lagunillas</td>
+<td>200</td>
+<td>Coordinación con comunidades de la jurisdicción.</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Puesto de Salud Pinaya</td>
+<td>200</td>
+<td>Vacunación organizada localmente.</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Centro de Salud Paratía</td>
+<td>150</td>
+<td>Coordinación con autoridades locales.</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>Puesto de Salud Chilahuito</td>
+<td>290</td>
+<td>Vacunación según programación local.</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>Centro de Salud Palca</td>
+<td>350</td>
+<td>Coordinación con comunidades.</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>Puesto de Salud Rivera Coylata</td>
+<td>170</td>
+<td>Programación propia del establecimiento.</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>Puesto de Salud Vila Vila</td>
+<td>160</td>
+<td>Vacunación organizada localmente.</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>Puesto de Salud Chivay</td>
+<td>160</td>
+<td>Coordinación con autoridades comunales.</td>
 </tr>
 
 </tbody>
 
 </table>
 
+</div>
+
+<section class="container mt-5">
+
+<div class="row">
+
+<div class="col-lg-6">
+
+<div class="card p-4">
+
+<h3 class="text-primary">
+
+<i class="fas fa-map-marker-alt"></i>
+
+Hospital Antonio Barrionuevo
+
+</h3>
+
+<p align="justify">
+
+El Hospital Antonio Barrionuevo implementará <strong>nueve (09) puntos fijos de vacunación</strong> estratégicamente distribuidos en la ciudad de Lampa, con el propósito de facilitar el acceso de la población a la vacuna antirrábica canina y alcanzar la meta programada.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="card p-4">
+
+<h3 class="text-success">
+
+<i class="fas fa-map"></i>
+
+Centro de Salud Santa Lucía
+
+</h3>
+
+<p align="justify">
+
+El Centro de Salud Santa Lucía implementará <strong>seis (06) puntos de vacunación</strong> distribuidos en su jurisdicción para garantizar una adecuada cobertura durante la campaña.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <section class="container mt-5">
 
-<h2>
+<div class="alert alert-warning">
 
-¿Por qué vacunar?
+<h4>
 
-</h2>
+<i class="fas fa-info-circle"></i>
 
-<p>
+Organización de la campaña
 
-La rabia es una enfermedad mortal que puede afectar tanto a los animales como a las personas. Vacunar a los perros una vez al año es la forma más efectiva de prevenirla y proteger a toda la comunidad.
+</h4>
+
+<p align="justify">
+
+Los demás establecimientos de salud desarrollarán la Campaña Nacional de Vacunación Antirrábica Canina mediante puntos de vacunación definidos en coordinación con las autoridades locales, comunidades y organizaciones sociales de su ámbito jurisdiccional, considerando sus características geográficas, accesibilidad y población objetivo.
 
 </p>
 
+</div>
+
 </section>
 
-<footer>
+<section class="container mt-5">
 
-<div class="container text-center">
+<h2 class="section-title">
 
-Red de Salud Lampa
+¿Por qué vacunar a tu perro?
 
-<br>
+</h2>
 
-Unidad de Salud Ambiental y Zoonosis
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fas fa-shield-virus fa-3x text-danger mb-3"></i>
+
+<h5>Previene la Rabia</h5>
+
+<p>
+
+La rabia es una enfermedad mortal tanto para animales como para personas.
+
+</p>
 
 </div>
 
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fas fa-heart fa-3x text-primary mb-3"></i>
+
+<h5>Protege a tu familia</h5>
+
+<p>
+
+Vacunar a tu perro protege a toda la comunidad.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fas fa-hand-holding-medical fa-3x text-success mb-3"></i>
+
+<h5>Vacunación Gratuita</h5>
+
+<p>
+
+Todos los perros mayores de tres meses deben vacunarse una vez al año.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+  <section class="container mt-5" id="faq">
+
+<h2 class="section-title">
+
+<i class="fas fa-question-circle"></i>
+
+Preguntas frecuentes sobre la vacunación antirrábica
+
+</h2>
+
+
+<div class="accordion" id="preguntas">
+
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#p1">
+
+¿Desde qué edad se puede vacunar un perro contra la rabia?
+
+</button>
+
+</h2>
+
+<div id="p1" class="accordion-collapse collapse show" data-bs-parent="#preguntas">
+
+<div class="accordion-body">
+
+La vacunación antirrábica canina está indicada para perros a partir de los tres meses de edad y debe realizarse anualmente según las disposiciones sanitarias vigentes.
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#p2">
+
+¿La vacuna antirrábica tiene algún costo?
+
+</button>
+
+</h2>
+
+<div id="p2" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+
+<div class="accordion-body">
+
+No. La vacuna antirrábica canina durante la Campaña Nacional de Vacunación Antirrábica Canina (VANCAN) es totalmente gratuita.
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#p3">
+
+¿Qué perros deben recibir la vacuna?
+
+</button>
+
+</h2>
+
+<div id="p3" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+
+<div class="accordion-body">
+
+Todos los perros sanos mayores de tres meses deben ser vacunados, incluyendo perros con propietario y aquellos que forman parte de la población canina comunitaria.
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#p4">
+
+¿Qué debo hacer si mi perro fue mordido por otro animal?
+
+</button>
+
+</h2>
+
+<div id="p4" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+
+<div class="accordion-body">
+
+Debe acudir inmediatamente al establecimiento de salud más cercano para recibir orientación y evaluación del riesgo de exposición a rabia.
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="container mt-5">
+
+
+<div class="card p-4">
+
+
+<h2 class="section-title">
+
+<i class="fas fa-chart-line"></i>
+
+Avance de la Campaña VANCAN 2026
+
+</h2>
+
+
+<p>
+
+Seguimiento provincial de vacunación antirrábica canina.
+
+</p>
+
+
+<div class="progress" style="height:35px;">
+
+
+<div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
+
+role="progressbar"
+
+style="width:0%"
+
+id="barraAvance">
+
+0%
+
+</div>
+
+
+</div>
+
+
+<div class="text-center mt-3">
+
+<strong>
+
+Canes vacunados:
+
+<span id="contadorVacunados">0</span>
+
+/
+
+6180
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="container mt-5" id="contacto">
+
+
+<h2 class="section-title">
+
+<i class="fas fa-phone-alt"></i>
+
+Contacto institucional
+
+</h2>
+
+
+
+<div class="row g-4">
+
+
+<div class="col-md-6">
+
+
+<div class="card p-4">
+
+
+<h4 class="text-primary">
+
+Red de Salud Lampa
+
+</h4>
+
+
+<p>
+
+<i class="fas fa-hospital"></i>
+
+Unidad de Salud Ambiental y Zoonosis
+
+</p>
+
+
+<p>
+
+<i class="fas fa-map-marker-alt"></i>
+
+Hospital Antonio Barrionuevo - Lampa
+
+</p>
+
+
+<p>
+
+<i class="fas fa-envelope"></i>
+
+Correo institucional: Red de Salud Lampa
+
+</p>
+
+
+<p>
+
+<i class="fas fa-phone"></i>
+
+Información y orientación sobre VANCAN 2026
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="col-md-6">
+
+
+<div class="card p-4">
+
+
+<h4 class="text-success">
+
+Horario de atención
+
+</h4>
+
+
+<p>
+
+<i class="fas fa-clock"></i>
+
+Lunes a viernes
+
+</p>
+
+
+<p>
+
+08:00 a.m. - 05:00 p.m.
+
+</p>
+
+
+<p>
+
+Consulta los puntos de vacunación habilitados en tu establecimiento de salud más cercano.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="container mt-5">
+
+
+<h2 class="section-title">
+
+<i class="fas fa-map-marked-alt"></i>
+
+Ubicación Red de Salud Lampa
+
+</h2>
+
+
+<div class="ratio ratio-21x9">
+
+
+<iframe
+
+src="https://www.google.com/maps?q=Hospital+Antonio+Barrionuevo+Lampa+Puno&output=embed"
+
+style="border:0;"
+
+allowfullscreen=""
+
+loading="lazy">
+
+</iframe>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="container mt-5">
+
+
+<div class="card p-4 text-center">
+
+
+<h2 class="text-primary">
+
+🐶 ¡Vacuna a tu perro, protege a tu familia!
+
+</h2>
+
+
+<p class="lead">
+
+La rabia puede prevenirse. Participa en la Campaña Nacional de Vacunación Antirrábica Canina VANCAN 2026.
+
+</p>
+
+
+<a href="#establecimientos"
+
+class="btn btn-vancan btn-lg">
+
+<i class="fas fa-syringe"></i>
+
+Encuentra tu punto de vacunación
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer id="footer">
+
+
+<div class="container">
+
+
+<div class="row">
+
+
+<div class="col-md-6">
+
+
+<h4>
+
+<i class="fas fa-shield-dog"></i>
+
+VANCAN 2026
+
+</h4>
+
+
+<p>
+
+Campaña Nacional de Vacunación Antirrábica Canina
+
+Red de Salud Lampa
+
+Unidad de Salud Ambiental y Zoonosis
+
+</p>
+
+
+</div>
+
+
+
+<div class="col-md-6 text-md-end">
+
+
+<p>
+
+Ministerio de Salud del Perú
+
+</p>
+
+
+<p>
+
+Prevención y control de enfermedades zoonóticas
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<hr>
+
+
+<div class="text-center">
+
+
+© 2026 Red de Salud Lampa - Todos los derechos reservados.
+
+</div>
+
+
+</div>
+
+
 </footer>
+
+
+
+
 
 <script>
 
-let numero=0;
 
-setInterval(function(){
+// Animación contador de vacunados
 
-if(numero<1250){
+let vacunados = 0;
 
-numero+=5;
+let meta = 6180;
 
-document.getElementById("vacunados").innerHTML=numero;
+
+let contador = document.getElementById("contadorVacunados");
+
+let tarjeta = document.getElementById("vacunados");
+
+
+let intervalo = setInterval(function(){
+
+
+if(vacunados < meta){
+
+vacunados += 50;
+
+
+if(vacunados > meta){
+
+vacunados = meta;
 
 }
 
-},15);
+
+contador.innerHTML = vacunados.toLocaleString();
+
+tarjeta.innerHTML = vacunados.toLocaleString();
+
+
+
+let porcentaje = Math.round((vacunados/meta)*100);
+
+
+document.getElementById("barraAvance").style.width = porcentaje+"%";
+
+document.getElementById("barraAvance").innerHTML = porcentaje+"%";
+
+
+}else{
+
+
+clearInterval(intervalo);
+
+
+}
+
+
+},30);
+
+
 
 </script>
 
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </body>
 
