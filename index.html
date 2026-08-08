@@ -1008,171 +1008,135 @@ es gratuita.
 
 
 
-<!-- =====================================================
-     AVANCE DE VACUNACIÓN
-===================================================== -->
+<script>
 
-<section
-class="container mt-5"
-id="avance">
+// =====================================================
+// DATOS DE LA CAMPAÑA
+// =====================================================
 
+// Cantidad actual de canes vacunados
+let vacunados = 72;
 
-<div class="card p-4">
+// Meta total programada
+let meta = 1500;
 
+// Porcentaje establecido como meta institucional
+let metaPorcentaje = 80;
 
-<h2 class="section-title">
 
-<i class="fas fa-syringe"></i>
+// =====================================================
+// CÁLCULO DEL PORCENTAJE
+// =====================================================
 
-Unidad de Zoonosis
+let porcentaje = (vacunados / meta) * 100;
 
-</h2>
+// Redondeamos solamente para mostrar el porcentaje
+let porcentajeMostrar = Math.round(porcentaje);
 
+// La barra nunca podrá superar visualmente el 100 %
+let porcentajeBarra = Math.min(porcentaje, 100);
 
 
-<div class="text-center mb-4">
+// =====================================================
+// ELEMENTOS HTML
+// =====================================================
 
+let barra = document.getElementById("barraAvance");
 
-<h4>
+let cantidad = document.getElementById("cantidadVacunados");
 
-Avance de la vacunación antirrábica canina
+let porcentajeTexto =
+document.getElementById("porcentajeAvance");
 
-</h4>
+let mensaje =
+document.getElementById("mensajeAvance");
 
 
+// =====================================================
+// MOSTRAR CANTIDAD DE CANES
+// =====================================================
 
-<p class="text-muted">
+cantidad.innerHTML =
+vacunados.toLocaleString();
 
-Meta programada:
-<strong>1,500 canes</strong>
 
-<br>
+// =====================================================
+// MOSTRAR PORCENTAJE
+// =====================================================
 
-Meta institucional:
-<strong>80 % — 1,200 canes</strong>
+porcentajeTexto.innerHTML =
+porcentajeMostrar + "%";
 
-</p>
 
+// =====================================================
+// COLOR Y MENSAJE
+// =====================================================
 
-</div>
+// MENOR AL 80 %
+// ROJO
 
+if (porcentaje < metaPorcentaje) {
 
+    barra.classList.add("bg-danger");
 
-<!-- BARRA -->
+    mensaje.innerHTML =
+    "Meta en progreso";
 
+}
 
-<div
-class="barra-contenedor">
 
+// =====================================================
+// EXACTAMENTE 80 %
+// VERDE - META CUMPLIDA
+// =====================================================
 
-<div
-id="barraAvance"
-class="progress-bar"
-role="progressbar">
+else if (porcentaje === metaPorcentaje) {
 
+    barra.classList.add("bg-success");
 
-0%
+    mensaje.innerHTML =
+    "¡META CUMPLIDA!";
 
-</div>
+}
 
 
-</div>
+// =====================================================
+// MAYOR AL 80 %
+// VERDE - META SUPERADA
+// =====================================================
 
+else {
 
+    barra.classList.add("bg-success");
 
-<!-- MENSAJE -->
+    mensaje.innerHTML =
+    "¡META SUPERADA!";
 
+}
 
-<div class="text-center mt-3">
 
+// =====================================================
+// ACTUALIZAR BARRA
+// =====================================================
 
-<h5 id="mensajeAvance">
+barra.style.width =
+porcentajeBarra + "%";
 
-Meta en progreso
+barra.style.transition =
+"width 1.2s ease";
 
-</h5>
+barra.innerHTML =
+porcentajeMostrar + "%";
 
 
-</div>
+// Actualizar atributo de accesibilidad
 
+barra.setAttribute(
+"aria-valuenow",
+porcentaje
+);
 
-
-<!-- DATOS -->
-
-
-<div class="row text-center mt-4">
-
-
-<div class="col-md-4">
-
-
-<h3
-id="cantidadVacunados">
-
-72
-
-</h3>
-
-
-<p class="text-muted">
-
-Canes vacunados
-
-</p>
-
-
-</div>
-
-
-
-<div class="col-md-4">
-
-
-<h3
-id="porcentajeAvance">
-
-0%
-
-</h3>
-
-
-<p class="text-muted">
-
-Avance
-
-</p>
-
-
-</div>
-
-
-
-<div class="col-md-4">
-
-
-<h3>
-
-1,200
-
-</h3>
-
-
-<p class="text-muted">
-
-Meta institucional
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</section>
+</script>
 
 
 
