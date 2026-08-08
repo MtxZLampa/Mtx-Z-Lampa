@@ -828,17 +828,14 @@ es gratuita.
 
 <script>
 
+<script>
+
 // =====================================================
 // DATOS DE LA CAMPAÑA
 // =====================================================
 
-// Cantidad actual de canes vacunados
 let vacunados = 72;
-
-// Meta total programada
 let meta = 1500;
-
-// Porcentaje establecido como meta institucional
 let metaPorcentaje = 80;
 
 
@@ -848,10 +845,8 @@ let metaPorcentaje = 80;
 
 let porcentaje = (vacunados / meta) * 100;
 
-// Redondeamos solamente para mostrar el porcentaje
 let porcentajeMostrar = Math.round(porcentaje);
 
-// La barra nunca podrá superar visualmente el 100 %
 let porcentajeBarra = Math.min(porcentaje, 100);
 
 
@@ -860,75 +855,50 @@ let porcentajeBarra = Math.min(porcentaje, 100);
 // =====================================================
 
 let barra = document.getElementById("barraAvance");
-
 let cantidad = document.getElementById("cantidadVacunados");
-
-let porcentajeTexto =
-document.getElementById("porcentajeAvance");
-
-let mensaje =
-document.getElementById("mensajeAvance");
+let porcentajeTexto = document.getElementById("porcentajeAvance");
+let mensaje = document.getElementById("mensajeAvance");
 
 
 // =====================================================
-// MOSTRAR CANTIDAD DE CANES
+// MOSTRAR CANTIDAD
 // =====================================================
 
-cantidad.innerHTML =
-vacunados.toLocaleString();
+cantidad.innerHTML = vacunados.toLocaleString();
 
 
 // =====================================================
 // MOSTRAR PORCENTAJE
 // =====================================================
 
-porcentajeTexto.innerHTML =
-porcentajeMostrar + "%";
+porcentajeTexto.innerHTML = porcentajeMostrar + "%";
 
 
 // =====================================================
 // COLOR Y MENSAJE
 // =====================================================
 
-// MENOR AL 80 %
-// ROJO
-
 if (porcentaje < metaPorcentaje) {
 
     barra.classList.add("bg-danger");
 
-    mensaje.innerHTML =
-    "Meta en progreso";
+    mensaje.innerHTML = "Meta en progreso";
 
 }
-
-
-// =====================================================
-// EXACTAMENTE 80 %
-// VERDE - META CUMPLIDA
-// =====================================================
 
 else if (porcentaje === metaPorcentaje) {
 
     barra.classList.add("bg-success");
 
-    mensaje.innerHTML =
-    "¡META CUMPLIDA!";
+    mensaje.innerHTML = "¡META CUMPLIDA!";
 
 }
-
-
-// =====================================================
-// MAYOR AL 80 %
-// VERDE - META SUPERADA
-// =====================================================
 
 else {
 
     barra.classList.add("bg-success");
 
-    mensaje.innerHTML =
-    "¡META SUPERADA!";
+    mensaje.innerHTML = "¡META SUPERADA!";
 
 }
 
@@ -937,21 +907,20 @@ else {
 // ACTUALIZAR BARRA
 // =====================================================
 
-barra.style.width =
-porcentajeBarra + "%";
+barra.style.width = porcentajeBarra + "%";
 
-barra.style.transition =
-"width 1.2s ease";
+barra.style.transition = "width 1.2s ease";
 
-barra.innerHTML =
-porcentajeMostrar + "%";
+barra.innerHTML = porcentajeMostrar + "%";
 
 
-// Actualizar atributo de accesibilidad
+// =====================================================
+// ACCESIBILIDAD
+// =====================================================
 
 barra.setAttribute(
-"aria-valuenow",
-porcentaje
+    "aria-valuenow",
+    porcentaje
 );
 
 </script>
