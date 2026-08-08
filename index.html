@@ -830,12 +830,85 @@ es gratuita.
 
 <script>
 
+<!-- =====================================================
+     AVANCE DE VACUNACIÓN
+===================================================== -->
+
+<section class="container mt-5">
+
+    <h2 class="section-title">
+
+        <i class="fas fa-chart-line"></i>
+
+        Avance de vacunación
+
+    </h2>
+
+
+    <div class="card p-4">
+
+        <div class="text-center mb-3">
+
+            <h5>
+                Canes vacunados
+            </h5>
+
+            <h2 id="cantidadVacunados">
+                0
+            </h2>
+
+        </div>
+
+
+        <div class="progress"
+             style="height: 30px;">
+
+            <div
+                id="barraAvance"
+                class="progress-bar"
+                role="progressbar"
+                style="width: 0%;"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0">
+
+                0%
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-3">
+
+            <strong id="porcentajeAvance">
+                0%
+            </strong>
+
+            <p id="mensajeAvance"
+               class="mb-0">
+
+                Cargando...
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
 // =====================================================
 // DATOS DE LA CAMPAÑA
 // =====================================================
 
 let vacunados = 72;
+
 let meta = 1500;
+
 let metaPorcentaje = 80;
 
 
@@ -843,35 +916,47 @@ let metaPorcentaje = 80;
 // CÁLCULO DEL PORCENTAJE
 // =====================================================
 
-let porcentaje = (vacunados / meta) * 100;
+let porcentaje =
+    (vacunados / meta) * 100;
 
-let porcentajeMostrar = Math.round(porcentaje);
+let porcentajeMostrar =
+    Math.round(porcentaje);
 
-let porcentajeBarra = Math.min(porcentaje, 100);
+let porcentajeBarra =
+    Math.min(porcentaje, 100);
 
 
 // =====================================================
 // ELEMENTOS HTML
 // =====================================================
 
-let barra = document.getElementById("barraAvance");
-let cantidad = document.getElementById("cantidadVacunados");
-let porcentajeTexto = document.getElementById("porcentajeAvance");
-let mensaje = document.getElementById("mensajeAvance");
+let barra =
+    document.getElementById("barraAvance");
+
+let cantidad =
+    document.getElementById("cantidadVacunados");
+
+let porcentajeTexto =
+    document.getElementById("porcentajeAvance");
+
+let mensaje =
+    document.getElementById("mensajeAvance");
 
 
 // =====================================================
 // MOSTRAR CANTIDAD
 // =====================================================
 
-cantidad.innerHTML = vacunados.toLocaleString();
+cantidad.innerHTML =
+    vacunados.toLocaleString();
 
 
 // =====================================================
 // MOSTRAR PORCENTAJE
 // =====================================================
 
-porcentajeTexto.innerHTML = porcentajeMostrar + "%";
+porcentajeTexto.innerHTML =
+    porcentajeMostrar + "%";
 
 
 // =====================================================
@@ -882,7 +967,8 @@ if (porcentaje < metaPorcentaje) {
 
     barra.classList.add("bg-danger");
 
-    mensaje.innerHTML = "Meta en progreso";
+    mensaje.innerHTML =
+        "Meta en progreso";
 
 }
 
@@ -890,7 +976,8 @@ else if (porcentaje === metaPorcentaje) {
 
     barra.classList.add("bg-success");
 
-    mensaje.innerHTML = "¡META CUMPLIDA!";
+    mensaje.innerHTML =
+        "¡META CUMPLIDA!";
 
 }
 
@@ -898,7 +985,8 @@ else {
 
     barra.classList.add("bg-success");
 
-    mensaje.innerHTML = "¡META SUPERADA!";
+    mensaje.innerHTML =
+        "¡META SUPERADA!";
 
 }
 
@@ -907,11 +995,14 @@ else {
 // ACTUALIZAR BARRA
 // =====================================================
 
-barra.style.width = porcentajeBarra + "%";
+barra.style.width =
+    porcentajeBarra + "%";
 
-barra.style.transition = "width 1.2s ease";
+barra.style.transition =
+    "width 1.2s ease";
 
-barra.innerHTML = porcentajeMostrar + "%";
+barra.innerHTML =
+    porcentajeMostrar + "%";
 
 
 // =====================================================
